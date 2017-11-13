@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +16,39 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clash-clans-background" translatesAutoresizingMaskIntoConstraints="NO" id="k8f-mp-vZt">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye-logo-10" translatesAutoresizingMaskIntoConstraints="NO" id="EwF-zG-c61">
+                                <rect key="frame" x="164" y="96" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EwF-zG-c61" secondAttribute="height" multiplier="15:8" id="9XE-c6-b64"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="k8f-mp-vZt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5yY-dB-eDQ"/>
+                            <constraint firstItem="k8f-mp-vZt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dd8-aY-QMh"/>
+                            <constraint firstItem="EwF-zG-c61" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="UGV-fN-hVv"/>
+                            <constraint firstItem="EwF-zG-c61" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZbL-wb-YWu"/>
+                            <constraint firstItem="k8f-mp-vZt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hgA-Od-Gkt"/>
+                            <constraint firstItem="k8f-mp-vZt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nEa-6o-CI5"/>
+                            <constraint firstItem="EwF-zG-c61" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wHQ-V6-mba"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.816901408450704" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clash-clans-background" width="1242" height="700"/>
+        <image name="eye-logo-10" width="233" height="120"/>
+    </resources>
 </document>
