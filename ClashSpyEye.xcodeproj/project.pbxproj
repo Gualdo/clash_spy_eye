@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7C516DD76EB95B11757A51D4 /* Pods_ClashSpyEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B6436A824FA8516675D4CB /* Pods_ClashSpyEye.framework */; };
+		A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */; };
+		A332EDD31FBB22AB003541DB /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EDD21FBB22AB003541DB /* PlayerCell.swift */; };
 		A3887B7B1FB334A6008F1C7C /* Supercell-magic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3887B7A1FB334A6008F1C7C /* Supercell-magic-webfont.ttf */; };
 		A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396A6E41FBA243C007A5741 /* UIViewController.swift */; };
-		A396A6E71FBA38DC007A5741 /* ClanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396A6E61FBA38DC007A5741 /* ClanController.swift */; };
+		A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396A6E61FBA38DC007A5741 /* ClanInfo.swift */; };
 		A3A1D7671FB258FE0089C1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1D7661FB258FE0089C1B0 /* AppDelegate.swift */; };
 		A3A1D7691FB258FE0089C1B0 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1D7681FB258FE0089C1B0 /* Home.swift */; };
 		A3A1D76C1FB258FE0089C1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76A1FB258FE0089C1B0 /* Main.storyboard */; };
@@ -20,9 +22,11 @@
 
 /* Begin PBXFileReference section */
 		366902F36D0AD8E3FCD2DC79 /* Pods-ClashSpyEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClashSpyEye.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClashSpyEye/Pods-ClashSpyEye.release.xcconfig"; sourceTree = "<group>"; };
+		A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		A332EDD21FBB22AB003541DB /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		A3887B7A1FB334A6008F1C7C /* Supercell-magic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Supercell-magic-webfont.ttf"; sourceTree = "<group>"; };
 		A396A6E41FBA243C007A5741 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		A396A6E61FBA38DC007A5741 /* ClanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanController.swift; sourceTree = "<group>"; };
+		A396A6E61FBA38DC007A5741 /* ClanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanInfo.swift; sourceTree = "<group>"; };
 		A3A1D7631FB258FE0089C1B0 /* ClashSpyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClashSpyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A1D7661FB258FE0089C1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A1D7681FB258FE0089C1B0 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -52,6 +56,14 @@
 				C8B6436A824FA8516675D4CB /* Pods_ClashSpyEye.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A332EDD11FBB2278003541DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A332EDD21FBB22AB003541DB /* PlayerCell.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A3887B791FB3348C008F1C7C /* Fonts */ = {
@@ -91,9 +103,10 @@
 		A3A1D7651FB258FE0089C1B0 /* ClashSpyEye */ = {
 			isa = PBXGroup;
 			children = (
-				A396A6E31FBA240D007A5741 /* Extensions */,
-				A3A1D77D1FB25AC40089C1B0 /* Controllers */,
 				A3A1D77C1FB25AA40089C1B0 /* Application */,
+				A3A1D77D1FB25AC40089C1B0 /* Controllers */,
+				A396A6E31FBA240D007A5741 /* Extensions */,
+				A332EDD11FBB2278003541DB /* Models */,
 				A3A1D7781FB259F40089C1B0 /* Resourses */,
 				A3A1D77B1FB25A420089C1B0 /* Supporting Files */,
 			);
@@ -147,7 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				A3A1D7681FB258FE0089C1B0 /* Home.swift */,
-				A396A6E61FBA38DC007A5741 /* ClanController.swift */,
+				A396A6E61FBA38DC007A5741 /* ClanInfo.swift */,
+				A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,8 +315,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A332EDD31FBB22AB003541DB /* PlayerCell.swift in Sources */,
+				A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */,
 				A3A1D7691FB258FE0089C1B0 /* Home.swift in Sources */,
-				A396A6E71FBA38DC007A5741 /* ClanController.swift in Sources */,
+				A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */,
 				A3A1D7671FB258FE0089C1B0 /* AppDelegate.swift in Sources */,
 				A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */,
 			);

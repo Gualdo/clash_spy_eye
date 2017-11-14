@@ -35,9 +35,4 @@ class Home: UIViewController
     {
         self.topConstraint.constant = (self.view.frame.size.height - (self.clanSearchButton.frame.size.height + self.playerSearchButton.frame.height + self.clanSearchTextField.frame.size.height + self.playerSearchTextField.frame.size.height))/2
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
 }
