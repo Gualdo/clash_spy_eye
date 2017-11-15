@@ -136,13 +136,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wrj-fX-ZBB">
                             <size key="itemSize" width="666" height="35"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="150"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playerCell" id="nD2-qS-9D6" customClass="PlayerCell" customModule="ClashSpyEye" customModuleProvider="target">
-                                <rect key="frame" x="0.5" y="53" width="666" height="35"/>
+                                <rect key="frame" x="0.5" y="152" width="666" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="666" height="35"/>
@@ -165,7 +165,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gualdo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLd-gF-MLv">
-                                            <rect key="frame" x="133" y="8" width="189" height="20"/>
+                                            <rect key="frame" x="133" y="10" width="189" height="16"/>
                                             <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -264,21 +264,35 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccW-Iu-UfK">
-                                            <rect key="frame" x="10.5" y="10" width="20" height="15.5"/>
+                                            <rect key="frame" x="10.5" y="11.5" width="13" height="12.5"/>
                                             <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="9"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <size key="shadowOffset" width="0.0" height="2"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-m7-EKt">
+                                            <rect key="frame" x="15" y="8" width="88" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="88" id="9vj-7k-iEE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="9"/>
+                                            <size key="titleShadowOffset" width="0.0" height="2"/>
+                                            <state key="normal" title="War Log" backgroundImage="COCButton1">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="jJg-12-Zha" firstAttribute="leading" secondItem="09M-xH-se8" secondAttribute="trailing" constant="25" id="3EK-xa-PSq"/>
                                     <constraint firstItem="PqY-oN-6aE" firstAttribute="centerY" secondItem="nD2-qS-9D6" secondAttribute="centerY" id="4th-tf-QAa"/>
+                                    <constraint firstItem="iMM-m7-EKt" firstAttribute="centerY" secondItem="nD2-qS-9D6" secondAttribute="centerY" id="5TM-Zh-P8k"/>
                                     <constraint firstItem="v8Z-yP-Hrb" firstAttribute="leading" secondItem="s73-9K-8cX" secondAttribute="trailing" constant="25" id="5zK-AE-NDy"/>
                                     <constraint firstItem="bos-o4-2mh" firstAttribute="leading" secondItem="1be-MV-591" secondAttribute="trailing" constant="10" id="6p3-IF-VrO"/>
+                                    <constraint firstItem="iMM-m7-EKt" firstAttribute="leading" secondItem="nD2-qS-9D6" secondAttribute="leading" constant="15" id="7Gr-Z7-LtX"/>
                                     <constraint firstItem="09M-xH-se8" firstAttribute="leading" secondItem="ZLd-gF-MLv" secondAttribute="trailing" constant="10" id="7SD-Gd-Gmv"/>
                                     <constraint firstItem="bos-o4-2mh" firstAttribute="centerY" secondItem="nD2-qS-9D6" secondAttribute="centerY" id="7lq-bz-dbv"/>
                                     <constraint firstItem="jJg-12-Zha" firstAttribute="top" secondItem="nD2-qS-9D6" secondAttribute="top" constant="4" id="8iO-Na-UXu"/>
@@ -301,6 +315,7 @@
                                     <constraint firstItem="ctI-Z3-Ohb" firstAttribute="centerX" secondItem="s73-9K-8cX" secondAttribute="centerX" id="go6-Cw-yTQ"/>
                                     <constraint firstItem="ZLd-gF-MLv" firstAttribute="leading" secondItem="bos-o4-2mh" secondAttribute="trailing" constant="10" id="kix-lR-for"/>
                                     <constraint firstItem="s73-9K-8cX" firstAttribute="leading" secondItem="jJg-12-Zha" secondAttribute="trailing" constant="25" id="lsK-sx-qKQ"/>
+                                    <constraint firstItem="iMM-m7-EKt" firstAttribute="top" secondItem="nD2-qS-9D6" secondAttribute="top" constant="8" id="pBg-yn-gjv"/>
                                     <constraint firstItem="09M-xH-se8" firstAttribute="centerY" secondItem="nD2-qS-9D6" secondAttribute="centerY" id="pn3-wi-Ysi"/>
                                     <constraint firstItem="Ptl-RS-F74" firstAttribute="top" secondItem="nD2-qS-9D6" secondAttribute="top" constant="17" id="tHi-DO-ErW"/>
                                     <constraint firstItem="iFS-f0-60Z" firstAttribute="centerY" secondItem="nD2-qS-9D6" secondAttribute="centerY" id="wKv-eP-UuI"/>
@@ -311,22 +326,151 @@
                                 <size key="customSize" width="666" height="35"/>
                                 <connections>
                                     <outlet property="battlePointsLabel" destination="v8Z-yP-Hrb" id="jVR-py-DOo"/>
+                                    <outlet property="clanPositionLabel" destination="ccW-Iu-UfK" id="AYO-wI-5Tk"/>
                                     <outlet property="donatedTroopsLabel" destination="Ptl-RS-F74" id="c8p-bo-las"/>
+                                    <outlet property="donatedTroopsTitleLabel" destination="jJg-12-Zha" id="phg-8J-YaP"/>
                                     <outlet property="leagueImage" destination="iFS-f0-60Z" id="1mW-cd-mxY"/>
                                     <outlet property="levelImage" destination="1be-MV-591" id="1kP-dn-oIb"/>
                                     <outlet property="nameLabel" destination="ZLd-gF-MLv" id="6ws-Dn-4HF"/>
                                     <outlet property="receivedTroopsLabel" destination="ctI-Z3-Ohb" id="wmO-I8-R3V"/>
+                                    <outlet property="receivedTroopsTitleLablel" destination="s73-9K-8cX" id="jQP-GP-h4y"/>
+                                    <outlet property="thophyImageView" destination="PqY-oN-6aE" id="2xP-ii-RX7"/>
                                     <outlet property="viewFour" destination="09M-xH-se8" id="TAo-bm-q7H"/>
                                     <outlet property="viewOne" destination="Hrn-DI-Wzh" id="fZs-X3-hau"/>
                                     <outlet property="viewThree" destination="bos-o4-2mh" id="HNe-8e-n1W"/>
                                     <outlet property="viewTwo" destination="sfJ-xJ-ilb" id="5Yq-TG-XoV"/>
+                                    <outlet property="warLogButton" destination="iMM-m7-EKt" id="Hpx-VE-v8c"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="clanHeader" id="ltD-9A-E1J">
-                            <rect key="frame" x="0.0" y="0.0" width="667" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="667" height="150"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <color key="backgroundColor" red="0.67287421226501465" green="0.62555795907974243" blue="0.56462174654006958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813-yv-8Ju">
+                                    <rect key="frame" x="15" y="122" width="88" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="88" id="FVt-Kp-FwS"/>
+                                        <constraint firstAttribute="height" constant="20" id="ME3-0z-HsS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="7"/>
+                                    <size key="titleShadowOffset" width="0.0" height="2"/>
+                                    <state key="normal" title="Clan Awards" backgroundImage="COCButton1">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="KpV-z1-vQL">
+                                    <rect key="frame" x="21.5" y="110" width="75" height="7"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="7" id="a0n-YK-4Io"/>
+                                        <constraint firstAttribute="width" constant="75" id="soL-I8-SZS"/>
+                                    </constraints>
+                                    <color key="progressTintColor" red="0.7160910964012146" green="0.86007755994796753" blue="0.34917515516281128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="trackTintColor" red="0.45490196078431372" green="0.40784313725490196" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </progressView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clan_badge" translatesAutoresizingMaskIntoConstraints="NO" id="8oS-GK-1s3">
+                                    <rect key="frame" x="19" y="8" width="80" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="3FP-cr-4HP"/>
+                                        <constraint firstAttribute="width" constant="80" id="foG-cS-a8f"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhJ-1M-C7s">
+                                    <rect key="frame" x="435" y="0.0" width="1" height="150"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="j5c-Eh-w93"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#8Q2V0CR2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3j-qE-pcP">
+                                    <rect key="frame" x="339" y="8" width="66" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.50196078431372548" green="0.45490196078431372" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="team_tera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kww-Ea-FUN">
+                                    <rect key="frame" x="107" y="8" width="222" height="11.5"/>
+                                    <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="8"/>
+                                    <color key="textColor" red="0.96884840726852417" green="0.97699278593063354" blue="0.79197925329208374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="0.0" height="2"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy_2" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-Lq-Sux">
+                                    <rect key="frame" x="415" y="29.5" width="13" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15" id="RLE-Tj-GQM"/>
+                                        <constraint firstAttribute="width" constant="13" id="yrJ-AL-2nh"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy" translatesAutoresizingMaskIntoConstraints="NO" id="nMy-BJ-LRi">
+                                    <rect key="frame" x="331.5" y="37.5" width="13" height="0.0"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="KdQ-b0-OlH"/>
+                                        <constraint firstAttribute="width" constant="13" id="QN1-nY-Id5"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13193" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daC-vO-fYn">
+                                    <rect key="frame" x="384.5" y="32" width="22.5" height="11.5"/>
+                                    <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="8"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="0.0" height="2"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13393" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-K0-1ph">
+                                    <rect key="frame" x="301" y="32" width="22.5" height="11.5"/>
+                                    <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="8"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="0.0" height="2"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puntos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7C-m0-Xms">
+                                    <rect key="frame" x="107" y="32" width="37" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvF-1c-elt">
+                                    <rect key="frame" x="107" y="44.5" width="320" height="1"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="7rq-RH-fX6"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.84705882352941175" green="0.80000000000000004" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="LFw-Lq-Sux" firstAttribute="leading" secondItem="daC-vO-fYn" secondAttribute="trailing" constant="8" id="1p3-hb-1sM"/>
+                                <constraint firstItem="LFw-Lq-Sux" firstAttribute="top" secondItem="n3j-qE-pcP" secondAttribute="bottom" constant="8" id="2gg-8W-AGL"/>
+                                <constraint firstItem="Kww-Ea-FUN" firstAttribute="top" secondItem="ltD-9A-E1J" secondAttribute="top" constant="8" id="4aV-eg-UtG"/>
+                                <constraint firstItem="fvF-1c-elt" firstAttribute="leading" secondItem="T7C-m0-Xms" secondAttribute="leading" id="9D4-tG-vaU"/>
+                                <constraint firstItem="daC-vO-fYn" firstAttribute="centerY" secondItem="LFw-Lq-Sux" secondAttribute="centerY" id="Cl5-IH-Te4"/>
+                                <constraint firstItem="n3j-qE-pcP" firstAttribute="leading" secondItem="Kww-Ea-FUN" secondAttribute="trailing" constant="10" id="I53-SO-FuC"/>
+                                <constraint firstItem="813-yv-8Ju" firstAttribute="leading" secondItem="ltD-9A-E1J" secondAttribute="leading" constant="15" id="JTL-Ms-V16"/>
+                                <constraint firstItem="VhJ-1M-C7s" firstAttribute="centerY" secondItem="ltD-9A-E1J" secondAttribute="centerY" id="KJe-e7-NWO"/>
+                                <constraint firstItem="8oS-GK-1s3" firstAttribute="top" secondItem="ltD-9A-E1J" secondAttribute="top" constant="8" id="LjK-ls-9Bk"/>
+                                <constraint firstItem="VhJ-1M-C7s" firstAttribute="leading" secondItem="fvF-1c-elt" secondAttribute="trailing" constant="8" id="NX4-Fp-GdZ"/>
+                                <constraint firstItem="T7C-m0-Xms" firstAttribute="centerY" secondItem="4X2-K0-1ph" secondAttribute="centerY" id="RxI-Sg-tzA"/>
+                                <constraint firstItem="Kww-Ea-FUN" firstAttribute="leading" secondItem="8oS-GK-1s3" secondAttribute="trailing" constant="8" id="U1d-m8-6l2"/>
+                                <constraint firstItem="VhJ-1M-C7s" firstAttribute="leading" secondItem="n3j-qE-pcP" secondAttribute="trailing" constant="30" id="Uu9-p1-uDX"/>
+                                <constraint firstItem="daC-vO-fYn" firstAttribute="leading" secondItem="nMy-BJ-LRi" secondAttribute="trailing" constant="40" id="Z1h-Mc-zon"/>
+                                <constraint firstItem="nMy-BJ-LRi" firstAttribute="leading" secondItem="4X2-K0-1ph" secondAttribute="trailing" constant="8" id="d7n-Z2-Kp9"/>
+                                <constraint firstItem="VhJ-1M-C7s" firstAttribute="trailing" secondItem="LFw-Lq-Sux" secondAttribute="trailing" constant="8" id="fBk-HJ-9Ue"/>
+                                <constraint firstItem="nMy-BJ-LRi" firstAttribute="centerY" secondItem="daC-vO-fYn" secondAttribute="centerY" id="goY-MW-yyx"/>
+                                <constraint firstAttribute="bottom" secondItem="813-yv-8Ju" secondAttribute="bottom" constant="8" id="lWx-r0-Ak5"/>
+                                <constraint firstItem="8oS-GK-1s3" firstAttribute="centerX" secondItem="KpV-z1-vQL" secondAttribute="centerX" id="otX-Mn-Bkm"/>
+                                <constraint firstItem="VhJ-1M-C7s" firstAttribute="height" secondItem="ltD-9A-E1J" secondAttribute="height" id="owT-3l-un8"/>
+                                <constraint firstAttribute="trailing" secondItem="VhJ-1M-C7s" secondAttribute="trailing" constant="231" id="pLw-qi-pRg"/>
+                                <constraint firstItem="fvF-1c-elt" firstAttribute="top" secondItem="nMy-BJ-LRi" secondAttribute="bottom" constant="7" id="sgX-WQ-Y5f"/>
+                                <constraint firstItem="813-yv-8Ju" firstAttribute="top" secondItem="KpV-z1-vQL" secondAttribute="bottom" constant="5" id="swr-ak-QRn"/>
+                                <constraint firstItem="4X2-K0-1ph" firstAttribute="centerY" secondItem="nMy-BJ-LRi" secondAttribute="centerY" id="uWI-Z9-y5h"/>
+                                <constraint firstItem="KpV-z1-vQL" firstAttribute="centerX" secondItem="813-yv-8Ju" secondAttribute="centerX" id="y1m-Lq-0ra"/>
+                                <constraint firstItem="T7C-m0-Xms" firstAttribute="leading" secondItem="Kww-Ea-FUN" secondAttribute="leading" id="y90-wi-G4U"/>
+                                <constraint firstItem="n3j-qE-pcP" firstAttribute="top" secondItem="ltD-9A-E1J" secondAttribute="top" constant="8" id="yhQ-BM-GGO"/>
+                            </constraints>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="3Nv-zo-IZY" id="VEG-AT-X5P"/>
@@ -359,7 +503,9 @@
     </scenes>
     <resources>
         <image name="COCButton1" width="195" height="45"/>
+        <image name="clan_badge" width="170" height="170"/>
         <image name="clash-clans-background" width="1242" height="700"/>
         <image name="trophy" width="100" height="100"/>
+        <image name="trophy_2" width="86" height="81"/>
     </resources>
 </document>

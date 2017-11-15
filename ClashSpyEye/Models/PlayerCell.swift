@@ -22,7 +22,11 @@ class PlayerCell: UICollectionViewCell
     @IBOutlet weak var viewTwo: UIView!
     @IBOutlet weak var viewThree: UIView!
     @IBOutlet weak var viewFour: UIView!
-    
+    @IBOutlet weak var donatedTroopsTitleLabel: UILabel!
+    @IBOutlet weak var clanPositionLabel: UILabel!
+    @IBOutlet weak var thophyImageView: UIImageView!
+    @IBOutlet weak var receivedTroopsTitleLablel: UILabel!
+    @IBOutlet weak var warLogButton: UIButton!
     //MARK: - PlayerCell Life Cicle
     
     func cellSetup(color1: UIColor, color2: UIColor)
@@ -35,6 +39,7 @@ class PlayerCell: UICollectionViewCell
         self.receivedTroopsLabel.clipsToBounds = true
         self.battlePointsLabel.layer.cornerRadius = 4.5
         self.battlePointsLabel.clipsToBounds = true
+        self.warLogButton.isHidden = true
         
         // Cell Background color
         
@@ -62,6 +67,10 @@ class PlayerCell: UICollectionViewCell
         self.viewTwo.isHidden = true
         self.viewThree.isHidden = true
         self.viewFour.isHidden = true
+        self.thophyImageView.isHidden = true
+        self.donatedTroopsTitleLabel.isHidden = true
+        self.receivedTroopsTitleLablel.isHidden = true
+        self.clanPositionLabel.isHidden = true
         
         // Cell Background color
         
