@@ -45,11 +45,14 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     
     func retrieveApiInfo()
     {
-        let request: APIRequest<Home, JSONError> = tron.request(ServerData.clanNameRequest + "team_tera")
+        let request: APIRequest<Home, JSONError> = tron.request(ServerData.clanNameRequest)
         request.headers = ["Content-Type":"application/json"]
         
-        let header = request.headerBuilder.headers(forAuthorizationRequirement: .required, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
-        request.headers = header        
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
+        request.headers = header
+        
+        request.parameters = [ServerData.clanNameRequestParameter : "team_tera"]
+        
         request.perform(withSuccess: { (home) in
             print("Successfully fetched out JSON Objects")
         }) { (err) in
