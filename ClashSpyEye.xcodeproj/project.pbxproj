@@ -18,6 +18,8 @@
 		A3A1D76C1FB258FE0089C1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76A1FB258FE0089C1B0 /* Main.storyboard */; };
 		A3A1D76E1FB258FE0089C1B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76D1FB258FE0089C1B0 /* Assets.xcassets */; };
 		A3A1D7711FB258FE0089C1B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76F1FB258FE0089C1B0 /* LaunchScreen.storyboard */; };
+		A3B93B411FBDDBBD00DD85C8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93B401FBDDBBD00DD85C8 /* Header.swift */; };
+		A3B93B441FBE021900DD85C8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93B431FBE021900DD85C8 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A3A1D76D1FB258FE0089C1B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3A1D7701FB258FE0089C1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A1D7721FB258FE0089C1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3B93B401FBDDBBD00DD85C8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		A3B93B431FBE021900DD85C8 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AADDDFFFE8700AFFCE8D6805 /* Pods-ClashSpyEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClashSpyEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClashSpyEye/Pods-ClashSpyEye.debug.xcconfig"; sourceTree = "<group>"; };
 		C8B6436A824FA8516675D4CB /* Pods_ClashSpyEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClashSpyEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,7 +65,7 @@
 		A332EDD11FBB2278003541DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A332EDD21FBB22AB003541DB /* PlayerCell.swift */,
+				A3B93B431FBE021900DD85C8 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +107,7 @@
 		A3A1D7651FB258FE0089C1B0 /* ClashSpyEye */ = {
 			isa = PBXGroup;
 			children = (
+				A3B93B421FBE01E700DD85C8 /* View */,
 				A3A1D77C1FB25AA40089C1B0 /* Application */,
 				A3A1D77D1FB25AC40089C1B0 /* Controllers */,
 				A396A6E31FBA240D007A5741 /* Extensions */,
@@ -164,6 +169,15 @@
 				A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A3B93B421FBE01E700DD85C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A332EDD21FBB22AB003541DB /* PlayerCell.swift */,
+				A3B93B401FBDDBBD00DD85C8 /* Header.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D305218B69A9B1AB7F270FBD /* Pods */ = {
@@ -317,7 +331,9 @@
 			files = (
 				A332EDD31FBB22AB003541DB /* PlayerCell.swift in Sources */,
 				A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */,
+				A3B93B411FBDDBBD00DD85C8 /* Header.swift in Sources */,
 				A3A1D7691FB258FE0089C1B0 /* Home.swift in Sources */,
+				A3B93B441FBE021900DD85C8 /* Player.swift in Sources */,
 				A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */,
 				A3A1D7671FB258FE0089C1B0 /* AppDelegate.swift in Sources */,
 				A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */,

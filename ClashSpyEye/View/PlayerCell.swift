@@ -27,6 +27,9 @@ class PlayerCell: UICollectionViewCell
     @IBOutlet weak var thophyImageView: UIImageView!
     @IBOutlet weak var receivedTroopsTitleLablel: UILabel!
     @IBOutlet weak var warLogButton: UIButton!
+    
+    
+    
     //MARK: - PlayerCell Life Cicle
     
     func cellSetup(color1: UIColor, color2: UIColor)

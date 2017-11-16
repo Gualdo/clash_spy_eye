@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import TRON
 
 class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
-{    
+{
+    // MARK: - Global Variables
+    
+    var players: [Player] = {
+        return player
+    }()
+    
     // MARK: - ClanInfo Life Cicle
     
     override func viewDidLoad()
@@ -50,7 +57,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "clanHeader", for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "clanHeader", for: indexPath) as! Header
         
         return header
     }
