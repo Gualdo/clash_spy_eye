@@ -27,8 +27,7 @@ class PlayerCell: UICollectionViewCell
     @IBOutlet weak var thophyImageView: UIImageView!
     @IBOutlet weak var receivedTroopsTitleLablel: UILabel!
     @IBOutlet weak var warLogButton: UIButton!
-    
-    
+    @IBOutlet weak var playerLvlLabel: UILabel!
     
     //MARK: - PlayerCell Life Cicle
     
@@ -74,6 +73,7 @@ class PlayerCell: UICollectionViewCell
         self.donatedTroopsTitleLabel.isHidden = true
         self.receivedTroopsTitleLablel.isHidden = true
         self.clanPositionLabel.isHidden = true
+        self.playerLvlLabel.isHidden = true
         
         // Cell Background color
         

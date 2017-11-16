@@ -8,20 +8,53 @@
 
 import UIKit
 import TRON
+import SwiftyJSON
 
 class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
+    // MARK: - Tron Json Classes
+    
+    class Home: JSONDecodable
+    {
+        required init(json: JSON) throws
+        {
+            print("Now ready to parse JSON: \n", json)
+        }
+    }
+    
+    class JSONError: JSONDecodable
+    {
+        required init(json: JSON) throws
+        {
+            print("JSON Error")
+        }
+    }
+    
     // MARK: - Global Variables
     
-    var players: [Player] = {
-        return player
-    }()
+    let tron = TRON(baseURL: ServerData.apiUrl + ServerData.apiVersion)
     
     // MARK: - ClanInfo Life Cicle
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        retrieveApiInfo()
+    }
+    
+    func retrieveApiInfo()
+    {
+        let request: APIRequest<Home, JSONError> = tron.request(ServerData.clanNameRequest + "team_tera")
+        request.headers = ["Content-Type":"application/json"]
+        
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .required, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
+        request.headers = header        
+        request.perform(withSuccess: { (home) in
+            print("Successfully fetched out JSON Objects")
+        }) { (err) in
+            print("Failed to fetch JSON...", err)
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -35,7 +68,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
         
         if indexPath.row == 0
         {
-            cell.cellSetupFirstCell(color1: UIColor(r: 172.0, g: 160.0, b: 144.0))
+            cell.cellSetupFirstCell(color1: UIColor(r: 216.0, g: 204.0, b: 188.0))
         }
         else
         {
