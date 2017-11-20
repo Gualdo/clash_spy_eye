@@ -12,51 +12,15 @@ import SwiftyJSON
 
 class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
-    // MARK: - Tron Json Classes
-    
-    class Home: JSONDecodable
-    {
-        required init(json: JSON) throws
-        {
-            print("Now ready to parse JSON: \n", json)
-        }
-    }
-    
-    class JSONError: JSONDecodable
-    {
-        required init(json: JSON) throws
-        {
-            print("JSON Error")
-        }
-    }
-    
-    // MARK: - Global Variables
-    
-    let tron = TRON(baseURL: ServerData.apiUrl + ServerData.apiVersion)
-    
+    var clanTag = String()
     // MARK: - ClanInfo Life Cicle
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        retrieveApiInfo()
-    }
-    
-    func retrieveApiInfo()
-    {
-        let request: APIRequest<Home, JSONError> = tron.request(ServerData.clanNameRequest)
-        request.headers = ["Content-Type":"application/json"]
-        
-        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
-        request.headers = header
-        
-        request.parameters = [ServerData.clanNameRequestParameter : "team_tera"]
-        
-        request.perform(withSuccess: { (home) in
-            print("Successfully fetched out JSON Objects")
-        }) { (err) in
-            print("Failed to fetch JSON...", err)
+        Service.sharedInstance.retrieveClanTag { (tag) in
+            self.clanTag = tag            
         }
     }
     

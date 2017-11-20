@@ -25,6 +25,7 @@ class Header: UICollectionReusableView
     @IBOutlet weak var clanBadgeImageView: UIImageView!
     @IBOutlet weak var clanAwardsButton: UIButton!
     @IBOutlet weak var clanDescriptionTextView: UITextView!
+    @IBOutlet weak var clanTagLabel: UILabel!
     
     func setupHeader(clanPoints: String, clanVersusPoints: String, warWins: String, members: String, clanType: String, requiredTrophies: String, warFrequency: String, clanLocation: String, warWinStreak: String, badge: UIImage)
     {

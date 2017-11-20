@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7C516DD76EB95B11757A51D4 /* Pods_ClashSpyEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B6436A824FA8516675D4CB /* Pods_ClashSpyEye.framework */; };
+		A32616891FC375FF004E6089 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32616881FC375FF004E6089 /* Service.swift */; };
+		A326168B1FC377D3004E6089 /* ClanTagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A326168A1FC377D3004E6089 /* ClanTagService.swift */; };
+		A326168E1FC378FA004E6089 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A326168D1FC378FA004E6089 /* JSONError.swift */; };
 		A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */; };
 		A332EDD31FBB22AB003541DB /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EDD21FBB22AB003541DB /* PlayerCell.swift */; };
 		A3887B7B1FB334A6008F1C7C /* Supercell-magic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3887B7A1FB334A6008F1C7C /* Supercell-magic-webfont.ttf */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		366902F36D0AD8E3FCD2DC79 /* Pods-ClashSpyEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClashSpyEye.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClashSpyEye/Pods-ClashSpyEye.release.xcconfig"; sourceTree = "<group>"; };
+		A32616881FC375FF004E6089 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A326168A1FC377D3004E6089 /* ClanTagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanTagService.swift; sourceTree = "<group>"; };
+		A326168D1FC378FA004E6089 /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
 		A332EDD21FBB22AB003541DB /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		A3887B7A1FB334A6008F1C7C /* Supercell-magic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Supercell-magic-webfont.ttf"; sourceTree = "<group>"; };
@@ -62,6 +68,16 @@
 				C8B6436A824FA8516675D4CB /* Pods_ClashSpyEye.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A32616871FC375EC004E6089 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A32616881FC375FF004E6089 /* Service.swift */,
+				A326168A1FC377D3004E6089 /* ClanTagService.swift */,
+				A326168D1FC378FA004E6089 /* JSONError.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		A332EDD11FBB2278003541DB /* Models */ = {
@@ -109,14 +125,15 @@
 		A3A1D7651FB258FE0089C1B0 /* ClashSpyEye */ = {
 			isa = PBXGroup;
 			children = (
-				A3B93B421FBE01E700DD85C8 /* View */,
 				A3A1D77C1FB25AA40089C1B0 /* Application */,
 				A3A1D77D1FB25AC40089C1B0 /* Controllers */,
 				A396A6E31FBA240D007A5741 /* Extensions */,
+				A3A2373D1FBE1C9400BC7590 /* Helpers */,
 				A332EDD11FBB2278003541DB /* Models */,
 				A3A1D7781FB259F40089C1B0 /* Resourses */,
+				A32616871FC375EC004E6089 /* Service */,
 				A3A1D77B1FB25A420089C1B0 /* Supporting Files */,
-				A3A2373D1FBE1C9400BC7590 /* Helpers */,
+				A3B93B421FBE01E700DD85C8 /* View */,
 			);
 			path = ClashSpyEye;
 			sourceTree = "<group>";
@@ -344,9 +361,12 @@
 				A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */,
 				A3B93B411FBDDBBD00DD85C8 /* Header.swift in Sources */,
 				A3A1D7691FB258FE0089C1B0 /* Home.swift in Sources */,
+				A326168E1FC378FA004E6089 /* JSONError.swift in Sources */,
 				A3B93B441FBE021900DD85C8 /* Player.swift in Sources */,
 				A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */,
 				A3A1D7671FB258FE0089C1B0 /* AppDelegate.swift in Sources */,
+				A32616891FC375FF004E6089 /* Service.swift in Sources */,
+				A326168B1FC377D3004E6089 /* ClanTagService.swift in Sources */,
 				A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */,
 				A3B93B461FBE1BF300DD85C8 /* Constants.swift in Sources */,
 			);
