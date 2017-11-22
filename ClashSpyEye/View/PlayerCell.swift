@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import LBTAComponents
 
 class PlayerCell: UICollectionViewCell
 {
     //MARK: - Outlets
     
-    @IBOutlet weak var leagueImage: UIImageView!
-    @IBOutlet weak var levelImage: UIImageView!
+    @IBOutlet weak var leagueImage: CachedImageView!
+    @IBOutlet weak var levelImage: CachedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var donatedTroopsLabel: UILabel!
     @IBOutlet weak var receivedTroopsLabel: UILabel!

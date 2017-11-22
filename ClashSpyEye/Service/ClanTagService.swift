@@ -16,13 +16,13 @@ class ClanTagService: JSONDecodable
     
     required init(json: JSON) throws
     {
-        print("Now ready to parse JSON: \n", json)
+        print("Now ready to parse JSON from retrieveClanTag: \n", json)
         
         let array = json["items"].array
         
-        for clanJon in array!
+        for clanJson in array!
         {
-            self.clanTag = clanJon["tag"].stringValue
+            self.clanTag = clanJson["tag"].stringValue
         }
     }
 }

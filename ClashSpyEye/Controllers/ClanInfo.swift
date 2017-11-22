@@ -9,19 +9,45 @@
 import UIKit
 import TRON
 import SwiftyJSON
+import KVNProgress
+import LBTAComponents
 
 class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
+    //MARK: - Global Variables
+    
     var clanTag = String()
+    var clanPoints = String()
+    var clanVersusPoints = String()
+    var warWins = String()
+    var numberOfMembers = String()
+    var clanType = String()
+    var requiredPersonalTrophies = String()
+    var requiredVersusTrophies = String()
+    var warFrequency = String()
+    var clanLocationName = String()
+    var warWinStreak = String()
+    var clanBadgeUrl = String()
+    var clanDescription = String()
+    var clanName = String()
+    var clanMembers = [String : Any]()
+    
     // MARK: - ClanInfo Life Cicle
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
-        
-        Service.sharedInstance.retrieveClanTag { (tag) in
-            self.clanTag = tag            
-        }
+        super.viewDidLoad()     
+    }
+    
+    override func viewWillLayoutSubviews()
+    {
+        super.viewWillLayoutSubviews()
+    }
+    
+    func reloadDataNow()
+    {
+        self.collectionView?.reloadData()
+        KVNProgress.showSuccess()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -40,6 +66,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
         else
         {
             cell.cellSetup(color1: UIColor(r: 234.0, g: 234.0, b: 234.0), color2: UIColor(r: 170.0, g: 170.0, b: 170.0))
+            
         }
         
         return cell
@@ -58,6 +85,8 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "clanHeader", for: indexPath) as! Header
+        
+        header.setupHeader(clanPoints: self.clanPoints, clanVersusPoints: self.clanVersusPoints, warWins: self.warWins, members: self.numberOfMembers, clanType: self.clanType, requiredPersonalTrophies: self.requiredPersonalTrophies, requiredVersusTrophies: self.requiredVersusTrophies, warFrequency: self.warFrequency, clanLocation: self.clanLocationName, warWinStreak: self.warWinStreak, badgeUrl: self.clanBadgeUrl, clanDescription: self.clanDescription, clanTag: self.clanTag, clanName: self.clanName)
         
         return header
     }

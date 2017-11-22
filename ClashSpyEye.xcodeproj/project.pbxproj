@@ -13,6 +13,7 @@
 		A326168E1FC378FA004E6089 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A326168D1FC378FA004E6089 /* JSONError.swift */; };
 		A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */; };
 		A332EDD31FBB22AB003541DB /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EDD21FBB22AB003541DB /* PlayerCell.swift */; };
+		A3436F401FC5C22A002E40AC /* ClanInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3436F3F1FC5C229002E40AC /* ClanInfoService.swift */; };
 		A3887B7B1FB334A6008F1C7C /* Supercell-magic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3887B7A1FB334A6008F1C7C /* Supercell-magic-webfont.ttf */; };
 		A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396A6E41FBA243C007A5741 /* UIViewController.swift */; };
 		A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396A6E61FBA38DC007A5741 /* ClanInfo.swift */; };
@@ -33,6 +34,7 @@
 		A326168D1FC378FA004E6089 /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
 		A332EDD21FBB22AB003541DB /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		A3436F3F1FC5C229002E40AC /* ClanInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanInfoService.swift; sourceTree = "<group>"; };
 		A3887B7A1FB334A6008F1C7C /* Supercell-magic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Supercell-magic-webfont.ttf"; sourceTree = "<group>"; };
 		A396A6E41FBA243C007A5741 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A396A6E61FBA38DC007A5741 /* ClanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanInfo.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				A32616881FC375FF004E6089 /* Service.swift */,
 				A326168A1FC377D3004E6089 /* ClanTagService.swift */,
 				A326168D1FC378FA004E6089 /* JSONError.swift */,
+				A3436F3F1FC5C229002E40AC /* ClanInfoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */,
 				A3A1D7671FB258FE0089C1B0 /* AppDelegate.swift in Sources */,
 				A32616891FC375FF004E6089 /* Service.swift in Sources */,
+				A3436F401FC5C22A002E40AC /* ClanInfoService.swift in Sources */,
 				A326168B1FC377D3004E6089 /* ClanTagService.swift in Sources */,
 				A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */,
 				A3B93B461FBE1BF300DD85C8 /* Constants.swift in Sources */,

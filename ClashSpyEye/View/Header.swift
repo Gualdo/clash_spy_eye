@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LBTAComponents
 
 class Header: UICollectionReusableView
 {
@@ -23,22 +24,55 @@ class Header: UICollectionReusableView
     @IBOutlet weak var clanLocationName: UILabel!
     @IBOutlet weak var warWinStreakLabel: UILabel!
     @IBOutlet weak var clanBadgeImageView: UIImageView!
-    @IBOutlet weak var clanAwardsButton: UIButton!
     @IBOutlet weak var clanDescriptionTextView: UITextView!
     @IBOutlet weak var clanTagLabel: UILabel!
+    @IBOutlet weak var clanNameLabel: UILabel!
     
-    func setupHeader(clanPoints: String, clanVersusPoints: String, warWins: String, members: String, clanType: String, requiredTrophies: String, warFrequency: String, clanLocation: String, warWinStreak: String, badge: UIImage)
+    func setupHeader(clanPoints: String, clanVersusPoints: String, warWins: String, members: String, clanType: String, requiredPersonalTrophies: String, requiredVersusTrophies: String, warFrequency: String, clanLocation: String, warWinStreak: String, badgeUrl: String, clanDescription: String, clanTag: String, clanName: String)
     {
         self.clanPointsLabel.text = clanPoints
         self.clanVersusPointsLabel.text = clanVersusPoints
         self.warWinsLabel.text = warWins
         self.membersLabel.text = members
         self.clanTypeLabel.text = clanType
-        self.requiredPersonalTrophiesLabel.text = requiredTrophies
-        self.requiredVersusTrophiesLabel.text = requiredTrophies
+        self.requiredPersonalTrophiesLabel.text = requiredPersonalTrophies
+        self.requiredVersusTrophiesLabel.text = requiredVersusTrophies
         self.warFrequencyLabel.text = warFrequency
         self.clanLocationName.text = clanLocation
         self.warWinStreakLabel.text = warWinStreak
-        self.clanBadgeImageView.image = badge
+        self.getImage(badgeUrl, self.clanBadgeImageView)
+        self.clanDescriptionTextView.text = clanDescription
+        self.clanTagLabel.text = clanTag
+        self.clanNameLabel.text = clanName
+    }
+    
+    func getImage(_ urlStr: String, _ imageView: UIImageView)
+    {
+        let url: URL = URL(string: urlStr)!
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url, completionHandler:
+        {(data, response, error) in
+            
+            if data != nil
+            {
+                let image = UIImage(data: data!)
+                
+                if(image != nil)
+                {
+                    DispatchQueue.main.async(execute: {
+                        
+                        imageView.image = image
+                        imageView.alpha = 0
+                        
+                        UIView.animate(withDuration: 2.5, animations: {
+                            imageView.alpha = 1.0
+                        })
+                    })
+                }
+            }
+        })
+        
+        task.resume()
     }
 }

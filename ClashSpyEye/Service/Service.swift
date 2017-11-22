@@ -9,6 +9,8 @@
 import UIKit
 import TRON
 import SwiftyJSON
+import KVNProgress
+import LBTAComponents
 
 struct Service
 {
@@ -22,22 +24,52 @@ struct Service
     
     func retrieveClanTag(completion: @escaping ((String) -> Void))
     {
+        KVNProgress.show(withStatus: "Loading")
+        
         let request: APIRequest<ClanTagService, JSONError> = tron.request(ServerData.clanNameRequest)
         request.headers = ["Content-Type":"application/json"]
         
         let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
         request.headers = header
         
-        request.parameters = [ServerData.clanNameRequestParameter : "team_tera"]
+        request.parameters = [ServerData.clanNameRequestParameter : RequestInfo.clanName]
         
         request.perform(withSuccess: { (tag) in
             
-            print("Successfully fetched out JSON Objects")
+            print("Successfully fetched out JSON Objects of retrieveClanTag Service")
+            
+            RequestInfo.clanTag = tag.clanTag
             
             completion(tag.clanTag)
             
         }) { (err) in
-            print("Failed to fetch JSON...", err)
+            
+            KVNProgress.showError()
+            print("Failed to fetch JSON of retrieveClanTag Service...", err)
+        }
+    }
+    
+    func retrieveClanInfo(completion: @escaping ((String, String, String, String, String, String, String, String, String, String, String, String, String) -> Void))
+    {
+        let request: APIRequest<ClanInfoService, JSONError> = tron.request(ServerData.clanNameRequest + "/" + RequestInfo.clanTag)
+        
+        request.headers = ["Content-Type":"application/json"]
+        
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
+        request.headers = header
+        
+        request.perform(withSuccess: { (clanInfo) in
+            
+            print("Successfully fetched out JSON Objects of retrieveClanInfo Service")
+            
+            completion(clanInfo.clanBadgeUrl, clanInfo.clanDescription, clanInfo.clanLocationName, clanInfo.clanPoints, clanInfo.clanType, clanInfo.clanVersusPoints, clanInfo.numberOfMembers, clanInfo.requiredPersonalTrophies, clanInfo.requiredVersusTrophies, clanInfo.warFrequency, clanInfo.warWins, clanInfo.warWinStreak, clanInfo.clanName)
+            
+            KVNProgress.showSuccess()
+            
+        }) { (err) in
+            
+            KVNProgress.showError()
+            print("Failed to fetch JSON of retrieveClanTag Service...", err)
         }
     }
 }
