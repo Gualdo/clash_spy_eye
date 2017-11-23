@@ -9,38 +9,60 @@
 import UIKit
 import TRON
 import SwiftyJSON
+import KVNProgress
 
 class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
+    //MARK: - Clan Header Variables
+    
     var clanTag = String()
+    var clanPoints = String()
+    var clanVersusPoints = String()
+    var warWins = String()
+    var numberOfMembers = String()
+    var clanType = String()
+    var requiredPersonalTrophies = String()
+    var requiredVersusTrophies = String()
+    var warFrequency = String()
+    var clanLocationName = String()
+    var warWinStreak = String()
+    var clanBadgeUrl = String()
+    var clanDescription = String()
+    var clanName = String()
+    
+    // MARK: - Palyer Cells Variables
+    
+    var membersAray = [[String : Any]]()
+    var membersImgageArray = [UIImage]()
+    
     // MARK: - ClanInfo Life Cicle
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
-        
-        Service.sharedInstance.retrieveClanTag { (tag) in
-            self.clanTag = tag            
-        }
+        super.viewDidLoad()     
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 4
+        return (membersAray.count)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! PlayerCell
         
-        if indexPath.row == 0
-        {
-            cell.cellSetupFirstCell(color1: UIColor(r: 216.0, g: 204.0, b: 188.0))
-        }
-        else
-        {
-            cell.cellSetup(color1: UIColor(r: 234.0, g: 234.0, b: 234.0), color2: UIColor(r: 170.0, g: 170.0, b: 170.0))
-        }
+        let member = membersAray[indexPath.row] as [String : Any]
+        
+        let clanPosition = String(member["clanRank"] as! Int)
+        let playerLevel = String(member["expLevel"] as! Int)
+        let playerName = member["name"] as! String
+        let donatedTroops = String(member["donations"] as! Int)
+        let receivedTroops = String(member["donationsReceived"] as! Int)
+        let battlePoints = String(member["trophies"] as! Int)
+        
+        print("Print de ClanInfo", self.membersImgageArray.count)
+        
+        cell.cellSetup(color1: UIColor(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0), color2: UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 170.0/255.0, alpha: 1.0), clanPosition: (clanPosition + "."), leagueImage: self.membersImgageArray[indexPath.row], playerLevel: playerLevel, playerName: playerName, donatedTroops: donatedTroops, receivedTroops: receivedTroops, battlePoints: battlePoints)
         
         return cell
     }
@@ -58,6 +80,8 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "clanHeader", for: indexPath) as! Header
+        
+        header.setupHeader(clanPoints: self.clanPoints, clanVersusPoints: self.clanVersusPoints, warWins: self.warWins, members: self.numberOfMembers, clanType: self.clanType, requiredPersonalTrophies: self.requiredPersonalTrophies, requiredVersusTrophies: self.requiredVersusTrophies, warFrequency: self.warFrequency, clanLocation: self.clanLocationName, warWinStreak: self.warWinStreak, badgeUrl: self.clanBadgeUrl, clanDescription: self.clanDescription, clanTag: self.clanTag, clanName: self.clanName)
         
         return header
     }

@@ -26,25 +26,21 @@ class PlayerCell: UICollectionViewCell
     @IBOutlet weak var clanPositionLabel: UILabel!
     @IBOutlet weak var thophyImageView: UIImageView!
     @IBOutlet weak var receivedTroopsTitleLablel: UILabel!
-    @IBOutlet weak var warLogButton: UIButton!
     @IBOutlet weak var playerLvlLabel: UILabel!
     
-    //MARK: - PlayerCell Life Cicle
+    //MARK: - PlayerCell Custom Functions
     
-    func cellSetup(color1: UIColor, color2: UIColor)
+    func cellSetup(color1: UIColor, color2: UIColor, clanPosition: String, leagueImage: UIImage, playerLevel: String, playerName: String, donatedTroops: String, receivedTroops: String, battlePoints: String)
     {
         //Label corner rounding
-        
         self.donatedTroopsLabel.layer.cornerRadius = 3.375
         self.donatedTroopsLabel.clipsToBounds = true
         self.receivedTroopsLabel.layer.cornerRadius = 3.375
         self.receivedTroopsLabel.clipsToBounds = true
         self.battlePointsLabel.layer.cornerRadius = 4.5
         self.battlePointsLabel.clipsToBounds = true
-        self.warLogButton.isHidden = true
         
         // Cell Background color
-        
         clipsToBounds = true
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [color1.cgColor , color2.cgColor]
@@ -52,30 +48,14 @@ class PlayerCell: UICollectionViewCell
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         self.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    func cellSetupFirstCell(color1: UIColor)
-    {
-        //Label corner rounding
         
-        self.donatedTroopsLabel.isHidden = true
-        self.receivedTroopsLabel.isHidden = true
-        self.battlePointsLabel.isHidden = true
-        self.leagueImage.isHidden = true
-        self.levelImage.isHidden = true
-        self.nameLabel.isHidden = true
-        self.viewOne.isHidden = true
-        self.viewTwo.isHidden = true
-        self.viewThree.isHidden = true
-        self.viewFour.isHidden = true
-        self.thophyImageView.isHidden = true
-        self.donatedTroopsTitleLabel.isHidden = true
-        self.receivedTroopsTitleLablel.isHidden = true
-        self.clanPositionLabel.isHidden = true
-        self.playerLvlLabel.isHidden = true
-        
-        // Cell Background color
-        
-        self.backgroundColor = color1
+        // Cell Data
+        self.clanPositionLabel.text = clanPosition
+        self.leagueImage.image = leagueImage
+        self.playerLvlLabel.text = playerLevel
+        self.nameLabel.text = playerName
+        self.donatedTroopsLabel.text = donatedTroops
+        self.receivedTroopsLabel.text = receivedTroops
+        self.battlePointsLabel.text = battlePoints
     }
 }
