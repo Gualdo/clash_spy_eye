@@ -9,13 +9,13 @@
 // Font Supercell-Magic
 
 import UIKit
-import LBTAComponents
 import KVNProgress
 
 class Home: UIViewController
 {
     // MARK: - Global Variables
     
+    // Clan Info Variables
     var clanTag = String()
     var clanPoints = String()
     var clanVersusPoints = String()
@@ -30,6 +30,10 @@ class Home: UIViewController
     var clanBadgeUrl = String()
     var clanDescription = String()
     var clanName = String()
+    
+    // Members Info Variables
+    var membersArray = [[String : Any]]()
+    var membersImgageArray = [UIImage]()
     
     // MARK: - Outlets
     
@@ -62,8 +66,9 @@ class Home: UIViewController
         Service.sharedInstance.retrieveClanTag { (tag) in
             self.clanTag = tag
             
-            Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName) in
+            Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName, membersArray, membersImgageArray) in
                 
+                // Clan Info Variables
                 self.clanBadgeUrl = clanBadgeUrl
                 self.clanDescription = clanDescription
                 self.clanLocationName = clanLocationName
@@ -77,6 +82,10 @@ class Home: UIViewController
                 self.warWins = warWins
                 self.warWinStreak = warWinStreak
                 self.clanName = clanName
+                
+                // Members Info Variables
+                self.membersArray = membersArray
+                self.membersImgageArray = membersImgageArray
                 
                 KVNProgress.showSuccess()
                 
@@ -96,6 +105,7 @@ class Home: UIViewController
         {
             if let clanInfoSegue = segue.destination as? ClanInfo
             {
+                // Clan info Variables
                 clanInfoSegue.clanTag = self.clanTag
                 clanInfoSegue.clanBadgeUrl = self.clanBadgeUrl
                 clanInfoSegue.clanDescription = self.clanDescription
@@ -110,6 +120,10 @@ class Home: UIViewController
                 clanInfoSegue.warWins = self.warWins
                 clanInfoSegue.warWinStreak = self.warWinStreak
                 clanInfoSegue.clanName = self.clanName
+                
+                // Members Info Variable
+                clanInfoSegue.membersAray = self.membersArray
+                clanInfoSegue.membersImgageArray = self.membersImgageArray
             }
         }
         else

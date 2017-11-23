@@ -9,10 +9,11 @@
 import UIKit
 import TRON
 import SwiftyJSON
-import LBTAComponents
 
 class ClanInfoService: JSONDecodable
 {
+    // MARK: - Clan Global Variables
+    
     var clanPoints = String()
     var clanVersusPoints = String()
     var warWins = String()
@@ -27,10 +28,18 @@ class ClanInfoService: JSONDecodable
     var clanDescription = String()
     var clanName = String()
     
+    // MARK: - Players Global Variables
+    
+    var membersArray = [[String : Any]]()
+    var membersImgageArray = [UIImage]()
+    
+    // MARK: - Clan info Json Parsing
+    
     required init(json: JSON) throws
     {
         print("Now ready to parse JSON from retrieveClanInfo: \n", json)
         
+        // Header Clan Info
         self.clanPoints = json["clanPoints"].stringValue
         self.clanVersusPoints = json["clanVersusPoints"].stringValue
         self.warWins = json["warWins"].stringValue
@@ -44,7 +53,22 @@ class ClanInfoService: JSONDecodable
         self.clanBadgeUrl = json["badgeUrls"]["large"].stringValue
         self.clanDescription = self.stringSpacingValidator(string: json["description"].stringValue).capitalized
         self.clanName = json["name"].stringValue
+        
+        // Player Cells Info
+        self.membersArray = json["memberList"].arrayObject as! [[String : Any]]
+        
+        for member in self.membersArray
+        {
+            let memberLeagueInfo = member["league"] as! [String : Any]
+            let leagueIcons = memberLeagueInfo["iconUrls"] as! [String : Any]
+            let leagueImageUrl = leagueIcons["small"] as! String
+            self.membersImgageArray.append(getImage(leagueImageUrl))
+        }
+        
+        print("Print de ClanInfoService", self.membersImgageArray.count)
     }
+    
+    // MARK: - String spacing Validator
     
     func stringSpacingValidator(string: String) -> String // Separate th word on a string everytime finds an uppercase
     {
@@ -65,5 +89,28 @@ class ClanInfoService: JSONDecodable
         }
         
         return modificableString
+    }
+    
+    func getImage(_ urlStr: String) -> (UIImage)
+    {
+        let url: URL = URL(string: urlStr)!
+        let session = URLSession.shared
+        var imageDone = UIImage()
+        
+        let task = session.dataTask(with: url, completionHandler:
+        {(data, response, error) in
+            
+            if data != nil
+            {
+                let image = UIImage(data: data!)
+                
+                if(image != nil)
+                {
+                    imageDone = image!
+                }
+            }
+        })
+        task.resume()
+        return imageDone
     }
 }

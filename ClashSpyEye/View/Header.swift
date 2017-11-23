@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LBTAComponents
 
 class Header: UICollectionReusableView
 {
@@ -27,6 +26,8 @@ class Header: UICollectionReusableView
     @IBOutlet weak var clanDescriptionTextView: UITextView!
     @IBOutlet weak var clanTagLabel: UILabel!
     @IBOutlet weak var clanNameLabel: UILabel!
+    
+    // MARK: - Custom Functions
     
     func setupHeader(clanPoints: String, clanVersusPoints: String, warWins: String, members: String, clanType: String, requiredPersonalTrophies: String, requiredVersusTrophies: String, warFrequency: String, clanLocation: String, warWinStreak: String, badgeUrl: String, clanDescription: String, clanTag: String, clanName: String)
     {

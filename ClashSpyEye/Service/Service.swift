@@ -10,7 +10,6 @@ import UIKit
 import TRON
 import SwiftyJSON
 import KVNProgress
-import LBTAComponents
 
 struct Service
 {
@@ -49,7 +48,7 @@ struct Service
         }
     }
     
-    func retrieveClanInfo(completion: @escaping ((String, String, String, String, String, String, String, String, String, String, String, String, String) -> Void))
+    func retrieveClanInfo(completion: @escaping ((String, String, String, String, String, String, String, String, String, String, String, String, String, [[String : Any]], [UIImage]) -> Void))
     {
         let request: APIRequest<ClanInfoService, JSONError> = tron.request(ServerData.clanNameRequest + "/" + RequestInfo.clanTag)
         
@@ -62,9 +61,7 @@ struct Service
             
             print("Successfully fetched out JSON Objects of retrieveClanInfo Service")
             
-            completion(clanInfo.clanBadgeUrl, clanInfo.clanDescription, clanInfo.clanLocationName, clanInfo.clanPoints, clanInfo.clanType, clanInfo.clanVersusPoints, clanInfo.numberOfMembers, clanInfo.requiredPersonalTrophies, clanInfo.requiredVersusTrophies, clanInfo.warFrequency, clanInfo.warWins, clanInfo.warWinStreak, clanInfo.clanName)
-            
-            KVNProgress.showSuccess()
+            completion(clanInfo.clanBadgeUrl, clanInfo.clanDescription, clanInfo.clanLocationName, clanInfo.clanPoints, clanInfo.clanType, clanInfo.clanVersusPoints, clanInfo.numberOfMembers, clanInfo.requiredPersonalTrophies, clanInfo.requiredVersusTrophies, clanInfo.warFrequency, clanInfo.warWins, clanInfo.warWinStreak, clanInfo.clanName, clanInfo.membersArray, clanInfo.membersImgageArray)
             
         }) { (err) in
             

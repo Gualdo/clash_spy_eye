@@ -8,7 +8,6 @@ target 'ClashSpyEye' do
   # Pods for ClashSpyEye
 
   pod 'TRON'
-  pod 'LBTAComponents'
   pod 'KVNProgress'
   pod 'IQKeyboardManagerSwift'
 

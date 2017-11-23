@@ -10,11 +10,10 @@ import UIKit
 import TRON
 import SwiftyJSON
 import KVNProgress
-import LBTAComponents
 
 class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
-    //MARK: - Global Variables
+    //MARK: - Clan Header Variables
     
     var clanTag = String()
     var clanPoints = String()
@@ -30,7 +29,11 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     var clanBadgeUrl = String()
     var clanDescription = String()
     var clanName = String()
-    var clanMembers = [String : Any]()
+    
+    // MARK: - Palyer Cells Variables
+    
+    var membersAray = [[String : Any]]()
+    var membersImgageArray = [UIImage]()
     
     // MARK: - ClanInfo Life Cicle
     
@@ -39,35 +42,27 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
         super.viewDidLoad()     
     }
     
-    override func viewWillLayoutSubviews()
-    {
-        super.viewWillLayoutSubviews()
-    }
-    
-    func reloadDataNow()
-    {
-        self.collectionView?.reloadData()
-        KVNProgress.showSuccess()
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 4
+        return (membersAray.count)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "playerCell", for: indexPath) as! PlayerCell
         
-        if indexPath.row == 0
-        {
-            cell.cellSetupFirstCell(color1: UIColor(r: 216.0, g: 204.0, b: 188.0))
-        }
-        else
-        {
-            cell.cellSetup(color1: UIColor(r: 234.0, g: 234.0, b: 234.0), color2: UIColor(r: 170.0, g: 170.0, b: 170.0))
-            
-        }
+        let member = membersAray[indexPath.row] as [String : Any]
+        
+        let clanPosition = String(member["clanRank"] as! Int)
+        let playerLevel = String(member["expLevel"] as! Int)
+        let playerName = member["name"] as! String
+        let donatedTroops = String(member["donations"] as! Int)
+        let receivedTroops = String(member["donationsReceived"] as! Int)
+        let battlePoints = String(member["trophies"] as! Int)
+        
+        print("Print de ClanInfo", self.membersImgageArray.count)
+        
+        cell.cellSetup(color1: UIColor(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0), color2: UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 170.0/255.0, alpha: 1.0), clanPosition: (clanPosition + "."), leagueImage: self.membersImgageArray[indexPath.row], playerLevel: playerLevel, playerName: playerName, donatedTroops: donatedTroops, receivedTroops: receivedTroops, battlePoints: battlePoints)
         
         return cell
     }
