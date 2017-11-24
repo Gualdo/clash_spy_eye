@@ -33,7 +33,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     // MARK: - Palyer Cells Variables
     
     var membersAray = [[String : Any]]()
-    var membersImgageArray = [UIImage]()
+    var memberLeagueImageUrl = [String]()
     
     // MARK: - ClanInfo Life Cicle
     
@@ -60,9 +60,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
         let receivedTroops = String(member["donationsReceived"] as! Int)
         let battlePoints = String(member["trophies"] as! Int)
         
-        print("Print de ClanInfo", self.membersImgageArray.count)
-        
-        cell.cellSetup(color1: UIColor(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0), color2: UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 170.0/255.0, alpha: 1.0), clanPosition: (clanPosition + "."), leagueImage: self.membersImgageArray[indexPath.row], playerLevel: playerLevel, playerName: playerName, donatedTroops: donatedTroops, receivedTroops: receivedTroops, battlePoints: battlePoints)
+        cell.cellSetup(color1: UIColor(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0), color2: UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 170.0/255.0, alpha: 1.0), clanPosition: (clanPosition + "."), memberLeagueImageUrl: self.memberLeagueImageUrl[indexPath.row], playerLevel: playerLevel, playerName: playerName, donatedTroops: donatedTroops, receivedTroops: receivedTroops, battlePoints: battlePoints)
         
         return cell
     }

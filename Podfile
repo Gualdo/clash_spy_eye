@@ -10,5 +10,6 @@ target 'ClashSpyEye' do
   pod 'TRON'
   pod 'KVNProgress'
   pod 'IQKeyboardManagerSwift'
+  pod 'SDWebImage'
 
 end

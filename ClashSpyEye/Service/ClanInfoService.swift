@@ -31,7 +31,7 @@ class ClanInfoService: JSONDecodable
     // MARK: - Players Global Variables
     
     var membersArray = [[String : Any]]()
-    var membersImgageArray = [UIImage]()
+    var memberLeagueImageUrl = [String]()
     
     // MARK: - Clan info Json Parsing
     
@@ -62,10 +62,8 @@ class ClanInfoService: JSONDecodable
             let memberLeagueInfo = member["league"] as! [String : Any]
             let leagueIcons = memberLeagueInfo["iconUrls"] as! [String : Any]
             let leagueImageUrl = leagueIcons["small"] as! String
-            self.membersImgageArray.append(getImage(leagueImageUrl))
+            self.memberLeagueImageUrl.append(leagueImageUrl)
         }
-        
-        print("Print de ClanInfoService", self.membersImgageArray.count)
     }
     
     // MARK: - String spacing Validator
@@ -89,28 +87,5 @@ class ClanInfoService: JSONDecodable
         }
         
         return modificableString
-    }
-    
-    func getImage(_ urlStr: String) -> (UIImage)
-    {
-        let url: URL = URL(string: urlStr)!
-        let session = URLSession.shared
-        var imageDone = UIImage()
-        
-        let task = session.dataTask(with: url, completionHandler:
-        {(data, response, error) in
-            
-            if data != nil
-            {
-                let image = UIImage(data: data!)
-                
-                if(image != nil)
-                {
-                    imageDone = image!
-                }
-            }
-        })
-        task.resume()
-        return imageDone
     }
 }
