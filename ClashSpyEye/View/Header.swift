@@ -41,39 +41,9 @@ class Header: UICollectionReusableView
         self.warFrequencyLabel.text = warFrequency
         self.clanLocationName.text = clanLocation
         self.warWinStreakLabel.text = warWinStreak
-        self.getImage(badgeUrl, self.clanBadgeImageView)
+        self.clanBadgeImageView.sd_setImage(with: URL(string: badgeUrl))
         self.clanDescriptionTextView.text = clanDescription
         self.clanTagLabel.text = clanTag
         self.clanNameLabel.text = clanName
-    }
-    
-    func getImage(_ urlStr: String, _ imageView: UIImageView)
-    {
-        let url: URL = URL(string: urlStr)!
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: url, completionHandler:
-        {(data, response, error) in
-            
-            if data != nil
-            {
-                let image = UIImage(data: data!)
-                
-                if(image != nil)
-                {
-                    DispatchQueue.main.async(execute: {
-                        
-                        imageView.image = image
-                        imageView.alpha = 0
-                        
-                        UIView.animate(withDuration: 2.5, animations: {
-                            imageView.alpha = 1.0
-                        })
-                    })
-                }
-            }
-        })
-        
-        task.resume()
     }
 }

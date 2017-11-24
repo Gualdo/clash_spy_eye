@@ -30,7 +30,7 @@ class PlayerCell: UICollectionViewCell
     
     //MARK: - PlayerCell Custom Functions
     
-    func cellSetup(color1: UIColor, color2: UIColor, clanPosition: String, leagueImage: UIImage, playerLevel: String, playerName: String, donatedTroops: String, receivedTroops: String, battlePoints: String)
+    func cellSetup(color1: UIColor, color2: UIColor, clanPosition: String, memberLeagueImageUrl: String, playerLevel: String, playerName: String, donatedTroops: String, receivedTroops: String, battlePoints: String)
     {
         //Label corner rounding
         self.donatedTroopsLabel.layer.cornerRadius = 3.375
@@ -51,7 +51,7 @@ class PlayerCell: UICollectionViewCell
         
         // Cell Data
         self.clanPositionLabel.text = clanPosition
-        self.leagueImage.image = leagueImage
+        self.leagueImage.sd_setImage(with: URL(string: memberLeagueImageUrl))
         self.playerLvlLabel.text = playerLevel
         self.nameLabel.text = playerName
         self.donatedTroopsLabel.text = donatedTroops

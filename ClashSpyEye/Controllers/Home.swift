@@ -33,7 +33,7 @@ class Home: UIViewController
     
     // Members Info Variables
     var membersArray = [[String : Any]]()
-    var membersImgageArray = [UIImage]()
+    var memberLeagueImageUrl = [String]()
     
     // MARK: - Outlets
     
@@ -66,7 +66,7 @@ class Home: UIViewController
         Service.sharedInstance.retrieveClanTag { (tag) in
             self.clanTag = tag
             
-            Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName, membersArray, membersImgageArray) in
+            Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName, membersArray, memberLeagueImageUrl) in
                 
                 // Clan Info Variables
                 self.clanBadgeUrl = clanBadgeUrl
@@ -85,7 +85,7 @@ class Home: UIViewController
                 
                 // Members Info Variables
                 self.membersArray = membersArray
-                self.membersImgageArray = membersImgageArray
+                self.memberLeagueImageUrl = memberLeagueImageUrl
                 
                 KVNProgress.showSuccess()
                 
@@ -123,7 +123,7 @@ class Home: UIViewController
                 
                 // Members Info Variable
                 clanInfoSegue.membersAray = self.membersArray
-                clanInfoSegue.membersImgageArray = self.membersImgageArray
+                clanInfoSegue.memberLeagueImageUrl = self.memberLeagueImageUrl
             }
         }
         else
