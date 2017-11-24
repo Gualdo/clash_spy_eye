@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Header: UICollectionReusableView
+class ClanInfoHeader: UICollectionReusableView
 {
     // MARK: - Oulets
     
@@ -37,7 +37,6 @@ class Header: UICollectionReusableView
         self.membersLabel.text = members
         self.clanTypeLabel.text = clanType
         self.requiredPersonalTrophiesLabel.text = requiredPersonalTrophies
-        self.requiredVersusTrophiesLabel.text = requiredVersusTrophies
         self.warFrequencyLabel.text = warFrequency
         self.clanLocationName.text = clanLocation
         self.warWinStreakLabel.text = warWinStreak

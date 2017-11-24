@@ -22,9 +22,10 @@
 		A3A1D76C1FB258FE0089C1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76A1FB258FE0089C1B0 /* Main.storyboard */; };
 		A3A1D76E1FB258FE0089C1B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76D1FB258FE0089C1B0 /* Assets.xcassets */; };
 		A3A1D7711FB258FE0089C1B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A1D76F1FB258FE0089C1B0 /* LaunchScreen.storyboard */; };
-		A3B93B411FBDDBBD00DD85C8 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93B401FBDDBBD00DD85C8 /* Header.swift */; };
-		A3B93B441FBE021900DD85C8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93B431FBE021900DD85C8 /* Player.swift */; };
+		A3B93B411FBDDBBD00DD85C8 /* ClanInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93B401FBDDBBD00DD85C8 /* ClanInfoHeader.swift */; };
 		A3B93B461FBE1BF300DD85C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B93B451FBE1BF300DD85C8 /* Constants.swift */; };
+		A3EA7A231FC8B7A8009582E3 /* ClanNameSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA7A221FC8B7A8009582E3 /* ClanNameSearch.swift */; };
+		A3EA7A251FC8B874009582E3 /* ClanSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA7A241FC8B874009582E3 /* ClanSearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +47,10 @@
 		A3A1D76D1FB258FE0089C1B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3A1D7701FB258FE0089C1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A1D7721FB258FE0089C1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3B93B401FBDDBBD00DD85C8 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		A3B93B431FBE021900DD85C8 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A3B93B401FBDDBBD00DD85C8 /* ClanInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanInfoHeader.swift; sourceTree = "<group>"; };
 		A3B93B451FBE1BF300DD85C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A3EA7A221FC8B7A8009582E3 /* ClanNameSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanNameSearch.swift; sourceTree = "<group>"; };
+		A3EA7A241FC8B874009582E3 /* ClanSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanSearchCell.swift; sourceTree = "<group>"; };
 		AADDDFFFE8700AFFCE8D6805 /* Pods-ClashSpyEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClashSpyEye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClashSpyEye/Pods-ClashSpyEye.debug.xcconfig"; sourceTree = "<group>"; };
 		C8B6436A824FA8516675D4CB /* Pods_ClashSpyEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClashSpyEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,14 +84,6 @@
 				A3436F3F1FC5C229002E40AC /* ClanInfoService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		A332EDD11FBB2278003541DB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A3B93B431FBE021900DD85C8 /* Player.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A368629B1FC8753F002891EF /* Bridging */ = {
@@ -141,7 +135,6 @@
 				A3A1D77D1FB25AC40089C1B0 /* Controllers */,
 				A396A6E31FBA240D007A5741 /* Extensions */,
 				A3A2373D1FBE1C9400BC7590 /* Helpers */,
-				A332EDD11FBB2278003541DB /* Models */,
 				A3A1D7781FB259F40089C1B0 /* Resourses */,
 				A32616871FC375EC004E6089 /* Service */,
 				A3A1D77B1FB25A420089C1B0 /* Supporting Files */,
@@ -200,6 +193,7 @@
 				A3A1D7681FB258FE0089C1B0 /* Home.swift */,
 				A396A6E61FBA38DC007A5741 /* ClanInfo.swift */,
 				A332EDCF1FBB1E35003541DB /* PlayerInfo.swift */,
+				A3EA7A221FC8B7A8009582E3 /* ClanNameSearch.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,7 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				A332EDD21FBB22AB003541DB /* PlayerCell.swift */,
-				A3B93B401FBDDBBD00DD85C8 /* Header.swift */,
+				A3B93B401FBDDBBD00DD85C8 /* ClanInfoHeader.swift */,
+				A3EA7A241FC8B874009582E3 /* ClanSearchCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,10 +368,9 @@
 			files = (
 				A332EDD31FBB22AB003541DB /* PlayerCell.swift in Sources */,
 				A332EDD01FBB1E35003541DB /* PlayerInfo.swift in Sources */,
-				A3B93B411FBDDBBD00DD85C8 /* Header.swift in Sources */,
+				A3B93B411FBDDBBD00DD85C8 /* ClanInfoHeader.swift in Sources */,
 				A3A1D7691FB258FE0089C1B0 /* Home.swift in Sources */,
 				A326168E1FC378FA004E6089 /* JSONError.swift in Sources */,
-				A3B93B441FBE021900DD85C8 /* Player.swift in Sources */,
 				A396A6E71FBA38DC007A5741 /* ClanInfo.swift in Sources */,
 				A3A1D7671FB258FE0089C1B0 /* AppDelegate.swift in Sources */,
 				A32616891FC375FF004E6089 /* Service.swift in Sources */,
@@ -384,6 +378,8 @@
 				A326168B1FC377D3004E6089 /* ClanTagService.swift in Sources */,
 				A396A6E51FBA243C007A5741 /* UIViewController.swift in Sources */,
 				A3B93B461FBE1BF300DD85C8 /* Constants.swift in Sources */,
+				A3EA7A231FC8B7A8009582E3 /* ClanNameSearch.swift in Sources */,
+				A3EA7A251FC8B874009582E3 /* ClanSearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

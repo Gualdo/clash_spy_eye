@@ -44,7 +44,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return (membersAray.count)
+        return membersAray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -77,7 +77,7 @@ class ClanInfo: UICollectionViewController, UICollectionViewDelegateFlowLayout
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "clanHeader", for: indexPath) as! Header
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "clanHeader", for: indexPath) as! ClanInfoHeader
         
         header.setupHeader(clanPoints: self.clanPoints, clanVersusPoints: self.clanVersusPoints, warWins: self.warWins, members: self.numberOfMembers, clanType: self.clanType, requiredPersonalTrophies: self.requiredPersonalTrophies, requiredVersusTrophies: self.requiredVersusTrophies, warFrequency: self.warFrequency, clanLocation: self.clanLocationName, warWinStreak: self.warWinStreak, badgeUrl: self.clanBadgeUrl, clanDescription: self.clanDescription, clanTag: self.clanTag, clanName: self.clanName)
         

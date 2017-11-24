@@ -64,6 +64,7 @@ class Home: UIViewController
         RequestInfo.clanName = self.clanSearchTextField.text!
         
         Service.sharedInstance.retrieveClanTag { (tag) in
+            
             self.clanTag = tag
             
             Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName, membersArray, memberLeagueImageUrl) in
