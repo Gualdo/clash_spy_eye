@@ -10,6 +10,7 @@
 
 import UIKit
 import KVNProgress
+import SwiftyJSON
 
 class Home: UIViewController
 {
@@ -30,6 +31,7 @@ class Home: UIViewController
     var clanBadgeUrl = String()
     var clanDescription = String()
     var clanName = String()
+    var clanList = [JSON]()
     
     // Members Info Variables
     var membersArray = [[String : Any]]()
@@ -63,35 +65,47 @@ class Home: UIViewController
     {
         RequestInfo.clanName = self.clanSearchTextField.text!
         
-        Service.sharedInstance.retrieveClanTag { (tag) in
+        Service.sharedInstance.retrieveClanTag { (clanList, tag) in
             
+            self.clanList = clanList
             self.clanTag = tag
+            RequestInfo.clanTag = tag
             
-            Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName, membersArray, memberLeagueImageUrl) in
-                
-                // Clan Info Variables
-                self.clanBadgeUrl = clanBadgeUrl
-                self.clanDescription = clanDescription
-                self.clanLocationName = clanLocationName
-                self.clanPoints = clanPoints
-                self.clanType = clanType
-                self.clanVersusPoints = clanVersusPoints
-                self.numberOfMembers = numberOfMembers
-                self.requiredPersonalTrophies = requiredPersonalTrophies
-                self.requiredVersusTrophies = requiredVersusTrophies
-                self.warFrequency = warFrequency
-                self.warWins = warWins
-                self.warWinStreak = warWinStreak
-                self.clanName = clanName
-                
-                // Members Info Variables
-                self.membersArray = membersArray
-                self.memberLeagueImageUrl = memberLeagueImageUrl
-                
+            print (self.clanList.count)
+            
+            if self.clanList.count == 0
+            {
+                Service.sharedInstance.retrieveClanInfo(completion: { (clanBadgeUrl, clanDescription, clanLocationName, clanPoints, clanType, clanVersusPoints, numberOfMembers, requiredPersonalTrophies, requiredVersusTrophies, warFrequency, warWins, warWinStreak, clanName, membersArray, memberLeagueImageUrl) in
+                    
+                    // Clan Info Variables
+                    self.clanBadgeUrl = clanBadgeUrl
+                    self.clanDescription = clanDescription
+                    self.clanLocationName = clanLocationName
+                    self.clanPoints = clanPoints
+                    self.clanType = clanType
+                    self.clanVersusPoints = clanVersusPoints
+                    self.numberOfMembers = numberOfMembers
+                    self.requiredPersonalTrophies = requiredPersonalTrophies
+                    self.requiredVersusTrophies = requiredVersusTrophies
+                    self.warFrequency = warFrequency
+                    self.warWins = warWins
+                    self.warWinStreak = warWinStreak
+                    self.clanName = clanName
+                    
+                    // Members Info Variables
+                    self.membersArray = membersArray
+                    self.memberLeagueImageUrl = memberLeagueImageUrl
+                    
+                    KVNProgress.showSuccess()
+                    
+                    self.performSegue(withIdentifier: "goToClanInfo", sender: nil)
+                })
+            }
+            else
+            {
                 KVNProgress.showSuccess()
-                
-                self.performSegue(withIdentifier: "goToClanInfo", sender: nil)
-            })         
+                self.performSegue(withIdentifier: "goToClanSelection", sender: nil)
+            }
         }
     }
     
@@ -99,6 +113,8 @@ class Home: UIViewController
     {
         
     }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -129,7 +145,10 @@ class Home: UIViewController
         }
         else
         {
-            
+            if let clanListSegue = segue.destination as? ClanNameSearch
+            {
+                clanListSegue.clanList = self.clanList
+            }
         }
     }
 }

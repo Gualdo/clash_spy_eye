@@ -56,6 +56,7 @@ class PlayerCell: UICollectionViewCell
         self.nameLabel.text = playerName
         self.donatedTroopsLabel.text = donatedTroops
         self.receivedTroopsLabel.text = receivedTroops
-        self.battlePointsLabel.text = battlePoints
+        let attributedBattlePioints = NSAttributedString(string: battlePoints)
+        self.battlePointsLabel.attributedText = attributedBattlePioints
     }
 }

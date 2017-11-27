@@ -21,25 +21,23 @@ struct Service
     
     static let sharedInstance = Service()
     
-    func retrieveClanTag(completion: @escaping ((String) -> Void))
+    func retrieveClanTag(completion: @escaping (([JSON], String) -> Void))
     {
         KVNProgress.show(withStatus: "Loading")
         
         let request: APIRequest<ClanTagService, JSONError> = tron.request(ServerData.clanNameRequest)
         request.headers = ["Content-Type":"application/json"]
         
-        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip201Token])
         request.headers = header
         
         request.parameters = [ServerData.clanNameRequestParameter : RequestInfo.clanName]
         
-        request.perform(withSuccess: { (tag) in
+        request.perform(withSuccess: { (clanList) in
             
             print("Successfully fetched out JSON Objects of retrieveClanTag Service")
             
-            RequestInfo.clanTag = tag.clanTag
-            
-            completion(tag.clanTag)
+            completion(clanList.clanList, clanList.clanTag)
             
         }) { (err) in
             
@@ -54,7 +52,7 @@ struct Service
         
         request.headers = ["Content-Type":"application/json"]
         
-        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip201Token])
         request.headers = header
         
         request.perform(withSuccess: { (clanInfo) in

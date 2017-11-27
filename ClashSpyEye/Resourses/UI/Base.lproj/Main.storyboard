@@ -112,7 +112,7 @@
                         <outlet property="topConstraint" destination="yaG-Uy-fLN" id="neh-PH-yrw"/>
                         <segue destination="3Nv-zo-IZY" kind="show" identifier="goToClanInfo" id="bzK-gC-mwn"/>
                         <segue destination="F8D-8Y-BJY" kind="show" identifier="goToPlayerInfo" id="YxK-qm-ag8"/>
-                        <segue destination="KFY-IM-u3f" kind="show" id="aTf-cc-Pel"/>
+                        <segue destination="KFY-IM-u3f" kind="show" identifier="goToClanSelection" id="aTf-cc-Pel"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -197,7 +197,7 @@
                                                 <fragment content="88888">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="9" name="Supercell-Magic"/>
+                                                        <font key="NSFont" metaFont="miniSystem"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="13" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -245,6 +245,13 @@
                                     <constraint firstItem="R8S-NW-arT" firstAttribute="top" secondItem="zfE-07-K23" secondAttribute="top" constant="4" id="xjW-Jz-b86"/>
                                 </constraints>
                                 <size key="customSize" width="667" height="40"/>
+                                <connections>
+                                    <outlet property="clanBadgeImageView" destination="JAE-NF-dlZ" id="DMW-3z-s3u"/>
+                                    <outlet property="clanNameLabel" destination="8ov-PH-Kf7" id="VXx-xp-Wrj"/>
+                                    <outlet property="clanPointsLabel" destination="m0i-AU-FdS" id="yyY-fM-CP1"/>
+                                    <outlet property="clanTypeLabel" destination="7nq-vm-ODN" id="vyY-aG-jsD"/>
+                                    <outlet property="numberOfMembersLabel" destination="wf6-L7-86u" id="2T7-54-EA3"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="clanHeader" id="hyf-e8-QZh" customClass="Header" customModule="ClashSpyEye" customModuleProvider="target">
@@ -252,7 +259,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE MIGHTY EYE found some clans " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5m-HZ-Gkb">
-                                    <rect key="frame" x="192" y="12" width="283.5" height="22"/>
+                                    <rect key="frame" x="192.5" y="12" width="283.5" height="22"/>
                                     <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="17"/>
                                     <color key="textColor" red="1" green="0.59554644505714038" blue="0.26390093406376436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -268,7 +275,7 @@
                                     <size key="shadowOffset" width="0.0" height="2"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plase Select THE ONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJU-V3-KM6">
-                                    <rect key="frame" x="167.5" y="73" width="332.5" height="42.5"/>
+                                    <rect key="frame" x="168" y="73" width="332.5" height="42.5"/>
                                     <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="33"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -291,10 +298,13 @@
                             <outlet property="delegate" destination="KFY-IM-u3f" id="Onz-zQ-A5q"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="3Nv-zo-IZY" kind="show" identifier="goToClanInfoFromNameSearch" id="rNg-Mo-agG"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzJ-67-JS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222.9385307346329" y="376.80000000000001"/>
+            <point key="canvasLocation" x="1223" y="550"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XUH-og-ajf">
@@ -309,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEO-lX-r1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="-218"/>
+            <point key="canvasLocation" x="1223" y="-313"/>
         </scene>
         <!--Clan Info-->
         <scene sceneID="hHa-G7-hha">
@@ -411,8 +421,8 @@
                                                 <fragment content="2431">
                                                     <attributes>
                                                         <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <font key="NSFont" size="9" name="Supercell-Magic"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="10" tighteningFactorForTruncation="0.0"/>
+                                                        <font key="NSFont" metaFont="miniSystem"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -958,7 +968,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcU-yl-cD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="1270"/>
+            <point key="canvasLocation" x="416" y="1452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MtJ-qs-8A8">
@@ -987,4 +997,7 @@
         <image name="trophy" width="100" height="100"/>
         <image name="trophy_2" width="86" height="81"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rNg-Mo-agG"/>
+    </inferredMetricsTieBreakers>
 </document>

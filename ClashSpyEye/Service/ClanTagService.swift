@@ -13,6 +13,7 @@ import SwiftyJSON
 class ClanTagService: JSONDecodable
 {
     var clanTag = String()
+    var clanList = [JSON]()
     
     required init(json: JSON) throws
     {
@@ -20,9 +21,13 @@ class ClanTagService: JSONDecodable
         
         let array = json["items"].array
         
-        for clanJson in array!
+        if array?.count == 1
         {
-            self.clanTag = clanJson["tag"].stringValue
+            self.clanTag = array![0]["tag"].stringValue
+        }
+        else
+        {
+            self.clanList = array!
         }
     }
 }
