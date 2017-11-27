@@ -28,7 +28,7 @@ struct Service
         let request: APIRequest<ClanTagService, JSONError> = tron.request(ServerData.clanNameRequest)
         request.headers = ["Content-Type":"application/json"]
         
-        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip201Token])
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
         request.headers = header
         
         request.parameters = [ServerData.clanNameRequestParameter : RequestInfo.clanName]
@@ -52,7 +52,7 @@ struct Service
         
         request.headers = ["Content-Type":"application/json"]
         
-        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip201Token])
+        let header = request.headerBuilder.headers(forAuthorizationRequirement: .allowed, including: ["Content-Type":"application/json", "Authorization": "Bearer " + ServerData.ip200Token])
         request.headers = header
         
         request.perform(withSuccess: { (clanInfo) in
